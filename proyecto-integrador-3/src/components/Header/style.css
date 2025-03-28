@@ -1,0 +1,13 @@
+header {
+    background-color: black;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.logo {
+    margin-left: 1.7%;
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin-right: 2%;
+}

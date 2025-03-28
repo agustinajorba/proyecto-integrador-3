@@ -1,5 +1,6 @@
 import React from "react";
 import OpcionesMenu from "./OpcionesMenu";
+import './style.css'
 
 
 function Header() {
