@@ -14,16 +14,21 @@ function Header() {
             path: '/favoritos'
         },
         {
-            name:'Ver todas',
-            path: '/vertodas'
+            name:'Películas',
+            path: '/peliculas'
         },
-        
+        {
+            name:'Series',
+            path: '/series'
+        }
     ]
     return (
         <header>
-            <h1>Nombre de la aplicacion</h1>
-            <img src='./img/logo.jpg' alt='' />
+            <div className = "barra-navegacion">
+            <h1 className="logo">StarCommerce</h1> 
             <OpcionesMenu opciones= {opciones}/>
+            </div>
+            
         </header>
 
     )

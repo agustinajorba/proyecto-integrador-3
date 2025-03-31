@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import './style.css'
 
 function OpcionesMenu(props){
     return(
-        <ul>
+        <div className="barra-navegacion">
+<ul className="barra">
             {
                 props.opciones.map((elm, idx) => 
                 <li key={`${idx}`-`${elm.name}` }>
@@ -14,6 +16,8 @@ function OpcionesMenu(props){
             }
 
         </ul>
+        </div>
+        
     )
 }
 export default OpcionesMenu;
