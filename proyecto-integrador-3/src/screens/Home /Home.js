@@ -1,11 +1,36 @@
 import React from "react";
+import SeccionPeli from "../../components/SeccionPeli/SeccionPeli";
 
 
 function Home(){
     return (
         <React.Fragment>
-        
-        </React.Fragment>
+            <form className="buscador">
+                <input type="text" placeholder="Buscar películas..." />
+            </form>
+
+            <div className="GrupoPeliculas">
+                <div className="PeliculasPopulares">
+                    <h2>Películas más populares</h2>
+                </div>
+                <ul>
+                    <SeccionPeli/>
+                </ul>
+            </div>
+            <div className="GrupoPeliculas">
+                <div className="PeliculasCartelera">
+                    <h2>Películas en cartelera</h2>
+                </div>
+                <ul>
+                    <li>Peli cartelera 1</li>
+                    <li>Peli cartelera 2</li>
+                    <li>Peli cartelera 3</li>
+                    <li>Peli cartelera 4</li>
+                </ul>
+            </div>
+
+            
+        </React.Fragment> 
         
       );
 }
