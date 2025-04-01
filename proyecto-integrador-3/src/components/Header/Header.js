@@ -25,7 +25,7 @@ function Header() {
     return (
         <header>
             <div className = "barra-navegacion">
-            <h1 className="logo">StarCommerce</h1> 
+            <h1 className="logo">MovieStar</h1> 
             <OpcionesMenu opciones= {opciones}/>
             </div>
             

@@ -1,40 +1,46 @@
 import React from "react";
-import Ficha from './Peli'
+import Peli from './Peli'
 
-function SeccionPeli(){
+function SeccionPeli() {
     const PeliData = [
         {
-            id:1,
+            id: 1,
             titulo: 'Pelicula N1',
             foto: "",
             descrip: 'lorem ipsum dolor sit amet, consectetur adip',
 
         },
         {
-            id:2,
+            id: 2,
             titulo: 'Pelicula N2',
             foto: "",
             descrip: 'lorem ipsum dolor sit amet, consectetur adip',
-        },{
-            id:3,
+        }, {
+            id: 3,
             titulo: 'Pelicula N3',
             foto: "",
             descrip: 'lorem ipsum dolor sit amet, consectetur adip',
         },
         {
-            id:4,
+            id: 4,
             titulo: 'Pelicula N4',
             foto: "",
             descrip: 'lorem ipsum dolor sit amet, consectetur adip',
         },
-        
+
     ]
     return (
-        <section className="top-data">
+        <>
             {
-                PeliData.map((elm, idx) => <Ficha key={`${idx}-${elm.icon}`} data={elm} /> )
-            }
-        </section>
+                PeliData.map((elm, idx) =>
+                    <li key={`${idx}-${elm.icon}`} className="pelicula">
+                        <Peli data={elm} />
+                    </li>
+
+                )}
+        </>
+
+
     )
 }
 export default SeccionPeli
