@@ -14,11 +14,11 @@ function Header() {
             path: '/favoritos'
         },
         {
-            name:'Películas',
+            name:'Populares',
             path: '/peliculas'
         },
         {
-            name:'Series',
+            name:'Cartelera',
             path: '/series'
         }
     ]
