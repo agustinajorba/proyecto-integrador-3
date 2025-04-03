@@ -1,12 +1,12 @@
 import React from "react";
 
 
-function Favoritos(){
+function Peliculas(){
     return (
         <div>
-            <h1>Favoritos</h1>
+            <h1>Peliculas:</h1>
         </div>
         
       );
 }
-export default Favoritos;
+export default Peliculas ;

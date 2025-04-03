@@ -1,5 +1,6 @@
 import React from "react";
 import OpcionesMenu from "./OpcionesMenu";
+import Busqueda from "../Busqueda/Busqueda";
 import './style.css'
 
 
@@ -14,11 +15,11 @@ function Header() {
             path: '/favoritos'
         },
         {
-            name:'Populares',
+            name:'Peliculas',
             path: '/peliculas'
         },
         {
-            name:'Cartelera',
+            name:'Series',
             path: '/series'
         }
     ]
@@ -27,6 +28,8 @@ function Header() {
             <div className = "barra-navegacion">
             <h1 className="logo">MovieStar</h1> 
             <OpcionesMenu opciones= {opciones}/>
+            <Busqueda />
+
             </div>
             
         </header>
