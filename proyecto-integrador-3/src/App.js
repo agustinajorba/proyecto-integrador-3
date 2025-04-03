@@ -5,8 +5,11 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import notFound from "./screens/NotFound/NotFound";
 import Busqueda from "./components/Busqueda/Busqueda.js";
-import Peliculas from "./screens/Peliculas/Peliculas.js";
-import Series from "./screens/Series/Series.js";
+import Populares from "./screens/Populares/Populares.js";
+import Cartel from "./screens/Cartelera/Cartelera.js";
+
+
+
 function App() {
   return (
     <>
@@ -15,9 +18,8 @@ function App() {
       <Switch>
         <Route path={'/'} exact={true} component={Home} />
         <Route path={'/busqueda'} component={Busqueda} />
-        <Route path={'/series'} component={Series} />
-        
-        <Route path={'/peliculas'} component={Peliculas} />
+        <Route path={'/populares'} component={Populares} /> 
+        <Route path={'/cartelera'} component={Cartel} />
         <Route path='' component={notFound} />
       </Switch>
     </main>

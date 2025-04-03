@@ -1,12 +1,12 @@
 import React from "react";
 
 
-function Peliculas(){
+function Cartel(){
     return (
         <div>
-            <h1>Peliculas:</h1>
+            <h1>Peliculas en Cartelera:</h1>
         </div>
         
       );
 }
-export default Peliculas ;
+export default Cartel ;

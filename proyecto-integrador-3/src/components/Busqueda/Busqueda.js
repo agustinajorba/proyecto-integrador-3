@@ -1,11 +1,14 @@
 import React from "react";
 
 
-function Busqueda(){
+function Busqueda() {
     return (
-            <div className="DivInput">
+        <div className="DivInput">
+            <form action='/peliculas'> 
                 <input className="input" type="search" name="busqueda" placeholder="Buscar Peliculas..." />
-            </div>
-      );
+            </form>
+
+        </div>
+    );
 }
 export default Busqueda;

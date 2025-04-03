@@ -1,12 +1,12 @@
 import React from "react";
 
 
-function Series(){
+function Populares(){
     return (
         <div>
-            <h1>Series:</h1>
+            <h1>Peliculas populares:</h1>
         </div>
         
       );
 }
-export default Series ;
+export default Populares ;

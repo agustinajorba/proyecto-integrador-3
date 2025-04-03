@@ -15,12 +15,12 @@ function Header() {
             path: '/favoritos'
         },
         {
-            name:'Peliculas',
-            path: '/peliculas'
+            name:'Populares',
+            path: '/populares'
         },
         {
-            name:'Series',
-            path: '/series'
+            name:'Cartelera',
+            path: '/cartelera'
         }
     ]
     return (
