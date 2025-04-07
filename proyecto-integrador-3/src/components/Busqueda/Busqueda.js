@@ -8,6 +8,7 @@ function Busqueda() {
                 <input className="input" type="search" name="busqueda" placeholder="Buscar Peliculas..." />
             </form>
 
+
         </div>
     );
 }
