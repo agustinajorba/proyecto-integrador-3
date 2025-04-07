@@ -10,6 +10,7 @@ class PeliculasCartelera extends Component {
         super(props)
         this.state = {
             PelisCartelera: [],
+            descripcion: false,
         }
     }
     componentDidMount() {
@@ -20,6 +21,12 @@ class PeliculasCartelera extends Component {
                 this.setState({ PelisCartelera: data.results });
             }).catch()
     }
+    descripcion() {
+        this.setState({
+            descripcion: !this.state.verDescripcion
+        })
+
+    }
 
     render() {
         return (
@@ -29,13 +36,22 @@ class PeliculasCartelera extends Component {
                     {this.state.PelisCartelera.map((pelicula, i) => {
                         console.log(pelicula);
 
-                        if (i < 5) { 
+                        if (i < 5) {
                             return (
+
                                 <li className="PeliculaCaja">
                                     <img src={`https://image.tmdb.org/t/p/w200${pelicula.poster_path}`}></img>
                                     <h1>{pelicula.title}</h1>
-                                    <p>{pelicula.overview}</p>
+                                    <button onClick={() => this.descripcion()}>
+                                        {this.state.descripcion ? "Ocultar Descripción" : "Ver Descripción"}
+                                    </button>
+                                    {this.state.descripcion && (
+                                        <p>{pelicula.overview}</p>
+                                    )}
                                 </li>
+
+
+
                             )
                         }
                     })}
