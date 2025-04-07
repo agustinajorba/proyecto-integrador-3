@@ -15,6 +15,7 @@ class Cartelera extends Component {
             page:1,
             PelisFilttradas: [],
             valorInput: '',
+    
         };
     }
 
@@ -40,13 +41,14 @@ class Cartelera extends Component {
         }).catch()
     }
    
+
     
 
     render() {
         
         return (
             <>
-                
+                <h1>Peliculas en Cartelera:</h1>
                 <ul>
                     {this.state.PelisCartelera.map((pelicula) => {
                         return <CardPeliculas key= {pelicula.id} data={pelicula} />
