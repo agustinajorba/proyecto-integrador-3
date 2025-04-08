@@ -2,6 +2,7 @@ import React from "react";
 import { Component } from "react";
 import './style.css'
 import CardPeliculas from "../CardPeliculas/CardPeliculas";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 
 let PeliculasPopularesURL = 'https://api.themoviedb.org/3/movie/popular?api_key=15879dad47bfb7f22061a18ffdf1b790'
@@ -32,6 +33,9 @@ class PeliculasPopulares extends Component {
 
                         
                     })}
+                    <Link to={'/populares'}>
+                        Ver todas
+                    </Link>
                 </ul >
             </>
         )
