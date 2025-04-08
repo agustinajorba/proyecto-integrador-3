@@ -2,7 +2,7 @@ import React from "react";
 import { Component } from "react";
 import './style.css'
 import CardPeliculas from "../../components/CardPeliculas/CardPeliculas";
-import Busqueda from "../../components/Busqueda/Busqueda";
+import FlitroPeliculas from "../../components/FiltroPeliculas/FiltroPeliculas";
 
 let api_key = '15879dad47bfb7f22061a18ffdf1b790';
 
@@ -13,8 +13,8 @@ class Cartelera extends Component {
         this.state = {
             PelisCartelera: [],
             page: 1,
-            PelisFilttradas: [],
-            valorInput: '',
+            PelisFiltradas:[],
+            
 
         };
     }
@@ -36,9 +36,16 @@ class Cartelera extends Component {
 
                 this.setState({
                     PelisCartelera: nuevaLista,
-                    page: this.state.page + 1
+                    page: this.state.page + 1,
+                    PelisFiltradas: data.results
                 })
             }).catch()
+    }
+
+    filtrarPeliculas(inputUsuario){
+        const peliculasFiltradas = this.state.PelisFiltradas.filter((elm) => elm.title.toLowerCase().includes(inputUsuario.toLowerCase()))
+        this.setState({PelisCartelera: peliculasFiltradas})
+
     }
 
 
@@ -49,6 +56,7 @@ class Cartelera extends Component {
         return (
             <>
                 <h1>Peliculas en Cartelera:</h1>
+                <FlitroPeliculas filtro={(busqueda) => this.filtrarPeliculas(busqueda)}/>
                 <ul>
                     {this.state.PelisCartelera.map((pelicula) => {
                         return <CardPeliculas key={pelicula.id} data={pelicula} />

@@ -2,6 +2,7 @@ import React from "react";
 import { Component } from "react";
 import './style.css'
 import CardPeliculas from "../../components/CardPeliculas/CardPeliculas";
+import FlitroPeliculas from "../../components/FiltroPeliculas/FiltroPeliculas";
 
 let api_key = '15879dad47bfb7f22061a18ffdf1b790' ;
 
@@ -11,6 +12,7 @@ class Populares extends Component {
         this.state = {
             PelisPopulares: [],
             page:1,
+            PelisFiltradas:[]
         }
     }
     componentDidMount() {
@@ -29,17 +31,23 @@ class Populares extends Component {
 
             this.setState({
                 PelisPopulares: nuevaLista,
-                page: this.state.page +1
+                page: this.state.page +1,
+                PelisFiltradas: data.results
             })
         }).catch()
     }
-       
+    filtrarPeliculas(inputUsuario){
+        const peliculasFiltradas = this.state.PelisFiltradas.filter((elm) => elm.title.toLowerCase().includes(inputUsuario.toLowerCase()))
+        this.setState({PelisPopulares: peliculasFiltradas})
+
+    }
     
 
     render() {
         return (
             <>
                 <h1>Peliculas Populares:</h1>
+                <FlitroPeliculas filtro={(busqueda) => this.filtrarPeliculas(busqueda)}/>
                 <ul>
                     {this.state.PelisPopulares.map((pelicula) => {
                         return <CardPeliculas key={pelicula.id} data={pelicula} />
