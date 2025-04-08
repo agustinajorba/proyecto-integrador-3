@@ -46,7 +46,7 @@ class Populares extends Component {
                     })}
                 </ul >
                 <div className="boton-vermas">
-                    <button  onClick={this.cargarPeliculas}> Cargar más</button>
+                <button onClick={() => this.cargarPeliculas()}> Cargar más</button>
                 </div>
             </>
         )
