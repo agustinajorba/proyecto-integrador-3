@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import notFound from "./screens/NotFound/NotFound";
 import Busqueda from "./components/Busqueda/Busqueda.js";
+import PeliculaDetalle from "./components/PeliculaDetalle/PeliculaDetalle.js";
 import Populares from "./screens/Populares/Populares.js";
 import Cartel from "./screens/Cartelera/Cartelera.js";
 import Favoritos from "./screens/Favoritos/Favoritos.js";
@@ -17,11 +18,13 @@ function App() {
     <main>
     <Header />
       <Switch>
+
         <Route path={'/'} exact={true} component={Home} />
         <Route path={'/busqueda'} component={Busqueda} />
         <Route path={'/populares'} component={Populares} /> 
         <Route path={'/cartelera'} component={Cartel} />
         <Route path={'/favoritos'} component={Favoritos} />
+        <Route path="/PeliculaDetalle/:id" component={PeliculaDetalle} />
         <Route path='' component={notFound} />
       </Switch>
     </main>
