@@ -30,7 +30,7 @@ export default class CardPeliculas extends Component {
                         {this.state.verDescripcion ? "Ocultar Descripción" : "Ver Descripción"}
                     </button>
 
-                    <Link to={`/PeliculaDetalle/${this.state.dataPelicula.id}`}>
+                    <Link to={`/detalle/${this.state.dataPelicula.id}`}>
                         <button className="btn"> Ir al detalle </button>
                     </Link>
                 </>

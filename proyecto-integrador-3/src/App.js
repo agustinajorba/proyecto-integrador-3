@@ -24,8 +24,8 @@ function App() {
         <Route path={'/populares'} component={Populares} /> 
         <Route path={'/cartelera'} component={Cartel} />
         <Route path={'/favoritos'} component={Favoritos} />
-        <Route path="/PeliculaDetalle/:id" component={PeliculaDetalle} />
-        <Route path='' component={notFound} />
+        <Route path={'/detalle/:id'} component={PeliculaDetalle} />
+        <Route path={''} component={notFound} />
       </Switch>
     </main>
     <Footer />
