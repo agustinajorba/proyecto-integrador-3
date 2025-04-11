@@ -71,17 +71,17 @@ export default class PeliculaDetalle extends Component {
         ) : (
           <section className='containerDetail'>
             <div className='text-detalle'>
-            <h1>{movies.title}</h1>
+            <h1 className='titulo'>{movies.title}</h1>
             <p>Calificación: {movies.vote_average} </p>
             <p>Fecha de Estreno: {movies.release_date}</p>
             <p>Duración: {movies.runtime} minutos</p>
-            <p>Sinopsis: {movies.overview}</p>
+            <p className='sinopsis'>Sinopsis: {movies.overview}</p>
             <p>Género/s: {movies.genres.map(genero => genero.name).join(', ')}</p>
             {
           this.state.favorito ?
-          <button onClick={()=> this.sacarFavoritos(movies.id) }>Sacar del carrito</button>
+          <button className='botonFavoritos' onClick={()=> this.sacarFavoritos(movies.id) }>Sacar del carrito</button>
           :
-          <button onClick={() => this.agregarFavoritos(movies.id)}>Agregar al carrito</button>
+          <button className='botonFavoritos' onClick={() => this.agregarFavoritos(movies.id)}>Agregar al carrito</button>
         }
             </div>
             <img src={`https://image.tmdb.org/t/p/w500/${movies.poster_path}`} alt={movies.title} className='foto-detail'/>

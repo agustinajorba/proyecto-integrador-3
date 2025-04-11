@@ -20,9 +20,6 @@ html, body {
     min-height: 100vh;
 }
 
-main { 
-    flex: 1;
-}
 
 footer {
     background-color: black;
@@ -31,4 +28,5 @@ footer {
     width: 100%;
     position: relative;
     bottom: 0;
+    
 }
