@@ -79,9 +79,9 @@ export default class PeliculaDetalle extends Component {
             <p>Género/s: {movies.genres.map(genero => genero.name).join(', ')}</p>
             {
           this.state.favorito ?
-          <button className='botonFavoritos' onClick={()=> this.sacarFavoritos(movies.id) }>Sacar del carrito</button>
+          <button className='botonFavoritos' onClick={()=> this.sacarFavoritos(movies.id) }>Sacar de Favoritos</button>
           :
-          <button className='botonFavoritos' onClick={() => this.agregarFavoritos(movies.id)}>Agregar al carrito</button>
+          <button className='botonFavoritos' onClick={() => this.agregarFavoritos(movies.id)}>Agregar a Favoritos</button>
         }
             </div>
             <img src={`https://image.tmdb.org/t/p/w500/${movies.poster_path}`} alt={movies.title} className='foto-detail'/>
