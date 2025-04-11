@@ -16,7 +16,7 @@ export default class PeliculaDetalle extends Component {
     fetch(`https://api.themoviedb.org/3/movie/${idPelicula}?api_key=15879dad47bfb7f22061a18ffdf1b790`)
     .then((response) => response.json())
     .then((data) => {console.log(data);
-     this.setState({ pelicula: data });})
+     this.setState({ pelicula: data });}) 
     .catch((error) => {console.log('El error fue: ' + error);})
 
   }

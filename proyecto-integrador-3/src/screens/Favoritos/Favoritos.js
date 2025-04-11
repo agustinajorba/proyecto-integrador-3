@@ -1,12 +1,63 @@
-import React from "react";
+import React, { Component } from "react";
+import CardPeliculas from "../../components/CardPeliculas/CardPeliculas";
 
+let api_key = '15879dad47bfb7f22061a18ffdf1b790' ;
 
-function Favoritos(){
-    return (
-        <div>
-            <h1>Favoritos:</h1>
+export default class Favoritos extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            peliculasFavoritas: [],
+            hayFavoritos: false, 
+        }
+    }
+
+    componentDidMount() {
+        const storageFavoritos = localStorage.getItem('fav')
+        if (storageFavoritos !== null) {
+            let favParseado = JSON.parse(storageFavoritos)
+            if (favParseado.length > 0) {
+                Promise.all(
+                    favParseado.map((id) =>
+                        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`)
+                            .then(resp => resp.json())
+                            .catch(e => console.log(e))
+                    )
+                )
+                    .then((data) => this.setState({
+                        peliculasFavoritas: data,
+                        hayFavoritos: true
+                    }))
+                    .catch(e => console.log(e));
+            }
+        }
+    }
+    filtrarFavoritos(id) {
+        const filtradas = this.state.peliculasFavoritas.filter(pelicula => pelicula.id !== id);
+        this.setState({ peliculasFavoritas: filtradas });
+    }
+
+    render() {
+        return (
+            <div>
+                {
+                this.state.peliculasFavoritas.length > 0 
+                ?
+                this.state.peliculasFavoritas.map((elm, idx)=> 
+                    <CardPeliculas 
+                        data={elm} 
+                        key={idx + elm.name} 
+                        borrarDeCarrito={(id)=> this.filtrarFavoritos(id)} 
+                    />)
+                :
+                this.state.hayFavoritos === false ? 
+                    <h1>El carrito esta vacio</h1>
+                :
+                <h1>
+                    Cargando Carrito
+                </h1>
+            }
         </div>
-        
-      );
+        )
+    }
 }
-export default Favoritos ;
