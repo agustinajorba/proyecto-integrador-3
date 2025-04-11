@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './style.css'
 
 export default class PeliculaDetalle extends Component {
   constructor(props) {
@@ -27,14 +28,16 @@ export default class PeliculaDetalle extends Component {
         {!movies.title ? (
           <p>No se encontró ninguna película con ese ID.</p>
         ) : (
-          <section>
-            <img src={`https://image.tmdb.org/t/p/w500/${movies.poster_path}`} alt={movies.title} />
+          <section className='containerDetail'>
+            <div className='text-detalle'>
             <h1>{movies.title}</h1>
             <p>Calificación: {movies.vote_average} </p>
             <p>Fecha de Estreno: {movies.release_date}</p>
             <p>Duración: {movies.runtime} minutos</p>
             <p>Sinopsis: {movies.overview}</p>
             <p>Género/s: {movies.genres.map(genero => genero.name).join(', ')}</p>
+            </div>
+            <img src={`https://image.tmdb.org/t/p/w500/${movies.poster_path}`} alt={movies.title} className='foto-detail'/>
           </section>
         )}
       </div>

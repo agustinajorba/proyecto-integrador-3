@@ -1,0 +1,14 @@
+.containerDetail{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.text-detalle{
+    padding: 1%;
+}
+
+.foto-detail{
+    border: 1px solid black;
+    border-radius: 20px;
+}
