@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import './style.css'
 
 export default class CardPeliculas extends Component {
     constructor(props) {
@@ -21,7 +22,7 @@ export default class CardPeliculas extends Component {
 
     componentDidMount() {
         this.chequearFavoritos();
-    
+
     }
 
     chequearFavoritos() {
@@ -70,30 +71,30 @@ export default class CardPeliculas extends Component {
         return (
 
 
-            <li className="PeliculaCaja">
+            <div className="containerCard">
                 <img src={`https://image.tmdb.org/t/p/w200${this.state.dataPelicula.poster_path}`} alt={this.state.dataPelicula.title}></img>
-                <h1>{this.state.dataPelicula.title}</h1>
-                <>
+                <h1 className='tituloCard'>{this.state.dataPelicula.title}</h1>
+                <div className='verDesc'>
                     <button onClick={() => this.descripcion()}>
                         {this.state.verDescripcion ? "Ocultar Descripción" : "Ver Descripción"}
                     </button>
 
+                    {this.state.verDescripcion && (
+                        <p className='descr'>{this.state.dataPelicula.overview}</p>
+                    )}
+                </div>
+                <div className='botonesHome'>
                     <Link to={`/detalle/${this.state.dataPelicula.id}`}>
                         <button className="btn"> Ir al detalle </button>
                     </Link>
-                </>
-
-                {this.state.verDescripcion && (
-                    <p>{this.state.dataPelicula.overview}</p>
-                )}
-
-                {
-                    this.state.favorito ?
-                        <button className='botonFavoritos' onClick={() => this.sacarFavoritos(movies.id)}>Sacar de Favoritos</button>
-                        :
-                        <button className='botonFavoritos' onClick={() => this.agregarFavoritos(movies.id)}>Agregar a Favoritos</button>
-                }
-            </li>
+                    {
+                        this.state.favorito ?
+                            <button className='botonFavoritosCard' onClick={() => this.sacarFavoritos(movies.id)}>Sacar de Favoritos</button>
+                            :
+                            <button className='botonFavoritosCard' onClick={() => this.agregarFavoritos(movies.id)}>Agregar a Favoritos</button>
+                    }
+                </div>
+            </div>
 
 
         )

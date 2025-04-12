@@ -46,13 +46,13 @@ class Populares extends Component {
     render() {
         return (
             <>
-                <h1>Peliculas Populares:</h1>
+                <h1 className="tituloPopu">Peliculas Populares:</h1>
                 <FlitroPeliculas filtro={(busqueda) => this.filtrarPeliculas(busqueda)}/>
-                <ul>
+                <div className="containerPopu">
                     {this.state.PelisPopulares.map((pelicula) => {
                         return <CardPeliculas key={pelicula.id} data={pelicula} />
                     })}
-                </ul >
+                </div >
                 <div className="boton-vermas">
                 <button onClick={() => this.cargarPeliculas()}> Cargar más</button>
                 </div>

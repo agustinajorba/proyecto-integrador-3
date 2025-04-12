@@ -19,24 +19,26 @@ class PeliculasPopulares extends Component {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
-                this.setState({ PelisPopulares: data.results.slice(0,5) });
+                this.setState({ PelisPopulares: data.results.slice(0, 5) });
             }).catch()
     }
 
     render() {
         return (
             <>
-                <h1>Peliculas Populares:</h1>
-                <ul>
+                <h1 className="tituloPopu">🎥  Películas Populares</h1>
+                <div className="populares">
                     {this.state.PelisPopulares.map((pelicula) => {
                         return <CardPeliculas key={pelicula.id} data={pelicula} />
 
-                        
+
                     })}
+                </div>
+                <div className="verTodas">
                     <Link to={'/populares'}>
                         Ver todas
                     </Link>
-                </ul >
+                </div >
             </>
         )
     }

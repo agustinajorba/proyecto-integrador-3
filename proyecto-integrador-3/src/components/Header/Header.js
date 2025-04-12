@@ -7,19 +7,19 @@ import './style.css'
 function Header() {
     let opciones = [
         {
-            name:'Home',
+            name:'HOME',
             path: '/'
         },
         {
-            name:'Favoritos',
+            name:'FAVORITOS',
             path: '/favoritos'
         },
         {
-            name:'Populares',
+            name:'POPULARES',
             path: '/populares'
         },
         {
-            name:'Cartelera',
+            name:'CARTELERA',
             path: '/cartelera'
         }
     ]
