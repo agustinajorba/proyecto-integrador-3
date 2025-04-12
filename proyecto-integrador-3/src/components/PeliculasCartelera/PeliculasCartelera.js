@@ -11,7 +11,7 @@ class PeliculasCartelera extends Component {
         super(props)
         this.state = {
             PelisCartelera: [],
-            
+
         }
     }
     componentDidMount() {
@@ -19,24 +19,30 @@ class PeliculasCartelera extends Component {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
-                this.setState({ PelisCartelera: data.results.slice(5,10) });
+                this.setState({ PelisCartelera: data.results.slice(5, 10) });
             }).catch()
     }
-   
+
 
     render() {
         return (
             <>
-                <h1>Peliculas en Cartelera:</h1>
-                <ul>
+                <h1 className="tituloHome">🎥  Peliculas en Cartelera:</h1>
+                <div className="cartelera">
                     {this.state.PelisCartelera.map((pelicula) => {
-                        return <CardPeliculas key= {pelicula.id} data={pelicula} />
-                       
+                        return <CardPeliculas key={pelicula.id} data={pelicula} />
+
                     })}
+                </div >
+                <div className="containerBotonCart">
+                    <div className="verTodasCart">
                     <Link to={'/cartelera'}>
                         Ver todas
                     </Link>
-                </ul >
+                    </div>
+                </div >
+            
+                
             </>
         )
     }
