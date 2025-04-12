@@ -7,17 +7,65 @@ export default class CardPeliculas extends Component {
         this.state = {
             dataPelicula: props.data,
             verDescripcion: false,
+            favorito: false
 
         }
     }
-    
+
     descripcion() {
         this.setState({
             verDescripcion: !this.state.verDescripcion
         })
 
     }
+
+    componentDidMount() {
+        this.chequearFavoritos();
+    
+    }
+
+    chequearFavoritos() {
+        let favoritos = localStorage.getItem('fav')
+        if (favoritos !== null) {
+            let favsParseados = JSON.parse(favoritos);
+            let estaMiId = favsParseados.includes(this.state.dataPelicula.id);
+            if (estaMiId) {
+                this.setState({ favorito: true });
+            }
+        }
+    }
+
+    agregarFavoritos(id) {
+        let favoritos = localStorage.getItem('fav')
+        if (favoritos !== null) {
+            let arrParseado = JSON.parse(favoritos)
+            arrParseado.push(id);
+            localStorage.setItem('fav', JSON.stringify(arrParseado));
+        } else {
+            let primerID = [id]
+            let arrStringificado = JSON.stringify(primerID)
+            localStorage.setItem('fav', arrStringificado)
+        }
+
+        this.setState({
+            favorito: true
+        })
+    }
+
+    sacarFavoritos(id) {
+        let favoritos = localStorage.getItem('fav')
+        let favsParseados = JSON.parse(favoritos);
+        let filtrarFavs = favsParseados.filter((elm) => elm !== id)
+        const favsStringificado = JSON.stringify(filtrarFavs)
+        localStorage.setItem('fav', favsStringificado)
+        this.setState({
+            favorito: false
+        })
+    }
+
     render() {
+        const movies = this.state.dataPelicula;
+
         console.log('props peli', this.props)
         return (
 
@@ -38,6 +86,13 @@ export default class CardPeliculas extends Component {
                 {this.state.verDescripcion && (
                     <p>{this.state.dataPelicula.overview}</p>
                 )}
+
+                {
+                    this.state.favorito ?
+                        <button className='botonFavoritos' onClick={() => this.sacarFavoritos(movies.id)}>Sacar de Favoritos</button>
+                        :
+                        <button className='botonFavoritos' onClick={() => this.agregarFavoritos(movies.id)}>Agregar a Favoritos</button>
+                }
             </li>
 
 
