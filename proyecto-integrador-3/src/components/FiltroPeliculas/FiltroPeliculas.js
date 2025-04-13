@@ -26,7 +26,7 @@ class FiltroPeliculas extends Component{
     render(){
         return(
             <form className = "filtro" onSubmit={(evento) => this.manjearSubmit(evento)}>
-                <input onChange={(evento) => this.controlarInput(evento)} value={this.state.valorInput} placeholder="Buscá tu película favorita" />
+                <input onChange={(evento) => this.controlarInput(evento)} value={this.state.valorInput} placeholder="Buscar películas"/>
             </form>
         )
     }

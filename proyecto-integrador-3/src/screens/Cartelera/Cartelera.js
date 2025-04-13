@@ -2,7 +2,7 @@ import React from "react";
 import { Component } from "react";
 import './style.css'
 import CardPeliculas from "../../components/CardPeliculas/CardPeliculas";
-import FlitroPeliculas from "../../components/FiltroPeliculas/FiltroPeliculas";
+import FiltroPeliculas from "../../components/FiltroPeliculas/FiltroPeliculas";
 
 let api_key = '15879dad47bfb7f22061a18ffdf1b790';
 
@@ -56,14 +56,16 @@ class Cartelera extends Component {
         return (
             <>
                 <h1 className="tituloPopu">Peliculas en Cartelera:</h1>
-                <FlitroPeliculas filtro={(busqueda) => this.filtrarPeliculas(busqueda)}/>
-                <ul className="peliculasCart">
+                <div className="buscadorCart" >
+                <FiltroPeliculas filtro={(busqueda) => this.filtrarPeliculas(busqueda)}/>
+                </div>
+                <div className="containerPopu">
                     {this.state.PelisCartelera.map((pelicula) => {
                         return <CardPeliculas key={pelicula.id} data={pelicula} />
 
                     })}
-                </ul >
-                <div className="boton-vermas">
+                </div >
+                <div className="cargarMas">
                     <button onClick={() => this.cargarPeliculas()}> Cargar más</button>
                 </div>
 
