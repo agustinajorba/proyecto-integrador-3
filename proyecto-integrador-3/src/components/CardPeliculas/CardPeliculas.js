@@ -74,10 +74,12 @@ export default class CardPeliculas extends Component {
             <div className="containerCard">
                 <img src={`https://image.tmdb.org/t/p/w200${this.state.dataPelicula.poster_path}`} alt={this.state.dataPelicula.title}></img>
                 <h1 className='tituloCard'>{this.state.dataPelicula.title}</h1>
-                <div className='verDesc'>
+                <div>
+                    <div className='verDesc'>
                     <button onClick={() => this.descripcion()}>
                         {this.state.verDescripcion ? "Ocultar Descripción" : "Ver Descripción"}
                     </button>
+                    </div>
 
                     {this.state.verDescripcion && (
                         <p className='descr'>{this.state.dataPelicula.overview}</p>

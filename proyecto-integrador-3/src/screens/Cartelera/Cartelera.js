@@ -55,7 +55,7 @@ class Cartelera extends Component {
 
         return (
             <>
-                <h1>Peliculas en Cartelera:</h1>
+                <h1 className="tituloPopu">Peliculas en Cartelera:</h1>
                 <FlitroPeliculas filtro={(busqueda) => this.filtrarPeliculas(busqueda)}/>
                 <ul className="peliculasCart">
                     {this.state.PelisCartelera.map((pelicula) => {

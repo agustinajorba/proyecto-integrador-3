@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CardPeliculas from "../../components/CardPeliculas/CardPeliculas";
+import './style.css'
 
 let api_key = '15879dad47bfb7f22061a18ffdf1b790' ;
 
@@ -40,6 +41,8 @@ export default class Favoritos extends Component {
     render() {
         return (
             <div>
+                <h1 className="tituloPopu">Peliculas Favoritas</h1>
+                <div className="containerPopu">
                 {
                 this.state.peliculasFavoritas.length > 0 
                 ?
@@ -51,12 +54,13 @@ export default class Favoritos extends Component {
                     />)
                 :
                 this.state.hayFavoritos === false ? 
-                    <h1>El carrito esta vacio</h1>
+                    <p className="favVacio">No hay películas en Favoritos</p>
                 :
-                <h1>
+                <p>
                     Cargando Carrito
-                </h1>
+                </p>
             }
+            </div>
         </div>
         )
     }

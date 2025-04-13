@@ -29,10 +29,18 @@
     text-decoration: underline;
 }
 
+.verDesc button {
+    font-size: 14px;
+    text-decoration: underline;
+    all: unset;
+    margin-bottom: 2%;
+}
+
 .descr {
     text-align: center;
     font-style: italic;
     color: #333;
+    
 }
 
 .botonesHome {
