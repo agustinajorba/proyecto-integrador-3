@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 
-class FlitroPeliculas extends Component{
+
+class FiltroPeliculas extends Component{
 
     constructor(props){
         super(props)
@@ -24,11 +25,11 @@ class FlitroPeliculas extends Component{
     }
     render(){
         return(
-            <form onSubmit={(evento) => this.manjearSubmit(evento)}>
-                <input onChange={(evento) => this.controlarInput(evento)} value={this.state.valorInput} />
+            <form className = "filtro" onSubmit={(evento) => this.manjearSubmit(evento)}>
+                <input onChange={(evento) => this.controlarInput(evento)} value={this.state.valorInput} placeholder="Buscá tu película favorita" />
             </form>
         )
     }
 
 }
-export default FlitroPeliculas;
+export default FiltroPeliculas;
