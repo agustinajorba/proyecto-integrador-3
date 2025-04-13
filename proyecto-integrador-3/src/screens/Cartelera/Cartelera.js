@@ -13,9 +13,8 @@ class Cartelera extends Component {
         this.state = {
             PelisCartelera: [],
             page: 1,
-            PelisFiltradas:[],
-            
-
+            PelisFiltradas: [],
+            cargar: true
         };
     }
 
@@ -37,39 +36,43 @@ class Cartelera extends Component {
                 this.setState({
                     PelisCartelera: nuevaLista,
                     page: this.state.page + 1,
-                    PelisFiltradas: data.results
+                    PelisFiltradas: data.results,
+                    cargar: false
                 })
             }).catch()
     }
 
-    filtrarPeliculas(inputUsuario){
+    filtrarPeliculas(inputUsuario) {
         const peliculasFiltradas = this.state.PelisFiltradas.filter((elm) => elm.title.toLowerCase().includes(inputUsuario.toLowerCase()))
-        this.setState({PelisCartelera: peliculasFiltradas})
+        this.setState({ PelisCartelera: peliculasFiltradas })
 
     }
 
-
-
-
     render() {
+        const cargando = this.state.cargar;
 
         return (
-            <>
-                <h1 className="tituloPopu">Peliculas en Cartelera:</h1>
-                <div className="buscadorCart" >
-                <FiltroPeliculas filtro={(busqueda) => this.filtrarPeliculas(busqueda)}/>
-                </div>
-                <div className="containerPopu">
-                    {this.state.PelisCartelera.map((pelicula) => {
-                        return <CardPeliculas key={pelicula.id} data={pelicula} />
+            <div>
+                {cargando ? (
+                    <p className='errorDetail'>Cargando...</p>
+                ) : (
+                    <>
+                        <h1 className="tituloPopu">Peliculas en Cartelera:</h1>
+                        <div className="buscadorCart" >
+                            <FiltroPeliculas filtro={(busqueda) => this.filtrarPeliculas(busqueda)} />
+                        </div>
+                        <div className="containerPopu">
+                            {this.state.PelisCartelera.map((pelicula) => {
+                                return <CardPeliculas key={pelicula.id} data={pelicula} />
 
-                    })}
-                </div >
-                <div className="cargarMas">
-                    <button onClick={() => this.cargarPeliculas()}> Cargar más</button>
-                </div>
-
-            </>
+                            })}
+                        </div >
+                        <div className="cargarMas">
+                            <button onClick={() => this.cargarPeliculas()}> Cargar más</button>
+                        </div>
+                    </>
+                )}
+            </div>
         )
     }
 }

@@ -7,7 +7,8 @@ export default class PeliculaDetalle extends Component {
     super(props);
     this.state = {
       pelicula: {},
-      favorito: false
+      favorito: false,
+      cargar: true
     }
   }
   componentDidMount() {
@@ -17,7 +18,10 @@ export default class PeliculaDetalle extends Component {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        this.setState({ pelicula: data });
+        this.setState({
+          pelicula: data,
+          cargar: false
+        });
       })
       .catch((error) => { console.log('El error fue: ' + error); })
 
@@ -64,12 +68,16 @@ export default class PeliculaDetalle extends Component {
 
   render() {
     const movies = this.state.pelicula;
+    const cargando = this.state.cargar;
 
     return (
 
-      <div className='errorDetail'>
-        {!movies.title ? (
-          <p>No se encontró ninguna película con ese ID.</p>
+      <div>
+        {cargando ? ( 
+          <p className='errorDetail'>Cargando...</p>
+        ) :
+        !movies.title ? (
+          <p className='errorDetail'>No se encontró ninguna película.</p>
         ) : (
           <section className='containerDetail'>
             <div className='text-detalle'>

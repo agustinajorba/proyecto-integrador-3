@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import CardPeliculas from "../../components/CardPeliculas/CardPeliculas";
 import './style.css'
 
-let api_key = '15879dad47bfb7f22061a18ffdf1b790' ;
+let api_key = '15879dad47bfb7f22061a18ffdf1b790';
 
 export default class Favoritos extends Component {
     constructor(props) {
         super(props)
         this.state = {
             peliculasFavoritas: [],
-            hayFavoritos: false, 
+            hayFavoritos: false,
         }
     }
 
@@ -27,7 +27,7 @@ export default class Favoritos extends Component {
                 )
                     .then((data) => this.setState({
                         peliculasFavoritas: data,
-                        hayFavoritos: true
+                        hayFavoritos: true,
                     }))
                     .catch(e => console.log(e));
             }
@@ -43,25 +43,25 @@ export default class Favoritos extends Component {
             <div>
                 <h1 className="tituloPopu">Peliculas Favoritas</h1>
                 <div className="containerPopu">
-                {
-                this.state.peliculasFavoritas.length > 0 
-                ?
-                this.state.peliculasFavoritas.map((elm, idx)=> 
-                    <CardPeliculas 
-                        data={elm} 
-                        key={idx + elm.name} 
-                        borrarDeCarrito={(id)=> this.filtrarFavoritos(id)} 
-                    />)
-                :
-                this.state.hayFavoritos === false ? 
-                    <p className="favVacio">No hay películas en Favoritos</p>
-                :
-                <p>
-                    Cargando Carrito
-                </p>
-            }
+                    {
+                        this.state.peliculasFavoritas.length > 0
+                            ?
+                            this.state.peliculasFavoritas.map((elm, idx) =>
+                                <CardPeliculas
+                                    data={elm}
+                                    key={idx + elm.name}
+                                    borrarDeCarrito={(id) => this.filtrarFavoritos(id)}
+                                />)
+                            :
+                            this.state.hayFavoritos === false ?
+                                <p className="favVacio">No hay películas en Favoritos</p>
+                                :
+                                <p>
+                                    Cargando Carrito
+                                </p>
+                    }
+                </div>
             </div>
-        </div>
         )
     }
 }

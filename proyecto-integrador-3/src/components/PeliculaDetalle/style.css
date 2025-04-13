@@ -44,3 +44,29 @@
     font-style: italic;
     color: #555;
 }
+
+.errorDetail{
+    text-align: center;
+    color: black;
+    font-weight: 50;
+    font-family: "Fira Sans", sans-serif;
+    text-align: center;
+    padding-top: 23%;
+    height: 320px;
+}
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+  
+  .spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #555;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: girar 1s linear infinite;
+  }
