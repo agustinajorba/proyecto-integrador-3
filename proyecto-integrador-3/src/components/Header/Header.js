@@ -1,6 +1,5 @@
 import React from "react";
 import OpcionesMenu from "./OpcionesMenu";
-import Busqueda from "../Busqueda/Busqueda";
 import './style.css'
 
 
@@ -25,11 +24,10 @@ function Header() {
     ]
     return (
         <header>
+            <h1 className="logo">🎥  MovieStar</h1> 
             <div className = "barra-navegacion">
-            <h1 className="logo">MovieStar</h1> 
             <OpcionesMenu opciones= {opciones}/>
-            <Busqueda />
-
+            
             </div>
             
         </header>

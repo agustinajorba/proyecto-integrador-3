@@ -27,7 +27,7 @@ class PeliculasCartelera extends Component {
     render() {
         return (
             <>
-                <h1 className="tituloHome">🎥  Peliculas en Cartelera:</h1>
+                <h1 className="tituloHome">Peliculas en Cartelera:</h1>
                 <div className="cartelera">
                     {this.state.PelisCartelera.map((pelicula) => {
                         return <CardPeliculas key={pelicula.id} data={pelicula} />

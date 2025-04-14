@@ -26,7 +26,7 @@ class PeliculasPopulares extends Component {
     render() {
         return (
             <>
-                <h1 className="tituloHome">🎥  Películas Populares</h1>
+                <h1 className="tituloHome">Películas Populares</h1>
                 <div className="populares">
                     {this.state.PelisPopulares.map((pelicula) => {
                         return <CardPeliculas key={pelicula.id} data={pelicula} />
