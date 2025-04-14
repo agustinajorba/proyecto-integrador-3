@@ -20,10 +20,14 @@ export default class PeliculaDetalle extends Component {
         console.log(data);
         this.setState({
           pelicula: data,
-          cargar: false
+          cargar: false,
+        }, () => {
+        this.chequearFavoritos();
+
         });
       })
-      .catch((error) => { console.log('El error fue: ' + error); })
+      .catch((error) => { console.log('El error fue: ' + error); 
+    });
 
   }
 
