@@ -1,0 +1,15 @@
+.texto-notFound {
+    text-align: center;
+    color: black;
+    font-weight: 50;
+    font-family: "Fira Sans", sans-serif;
+    text-align: center;
+    padding-top: 23%;
+    height: 350px;
+
+}
+
+.main-notFound {
+    display: flex;
+    justify-content: center;
+}

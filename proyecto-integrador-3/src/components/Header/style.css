@@ -1,0 +1,36 @@
+header {
+    background-color: black;
+    padding: 0.5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.barra-navegacion {
+    display: flex;
+    flex-direction: row;
+    font-family: "Fira Sans", sans-serif;
+    align-items: center;
+}
+
+.barra {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+}
+
+.barra a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
