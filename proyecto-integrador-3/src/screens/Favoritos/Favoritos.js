@@ -10,6 +10,7 @@ export default class Favoritos extends Component {
         this.state = {
             peliculasFavoritas: [],
             hayFavoritos: false,
+            cargar: true
         }
     }
 
@@ -28,6 +29,7 @@ export default class Favoritos extends Component {
                     .then((data) => this.setState({
                         peliculasFavoritas: data,
                         hayFavoritos: true,
+                        cargar: false
                     }))
                     .catch(e => console.log(e));
             }
@@ -48,24 +50,32 @@ export default class Favoritos extends Component {
     }
 
     render() {
+        const cargando = this.state.cargar;
         return (
             <div>
-                <h1 className="tituloPopu">Peliculas Favoritas</h1>
-                <div className="containerPopu">
-                    {
-                        this.state.peliculasFavoritas.length > 0
-                            ?
-                            this.state.peliculasFavoritas.map((elm, idx) =>
-                                <CardPeliculas
-                                    data={elm}
-                                    key={idx + elm.name}
-                                    borrarDeCarrito={(id) => this.filtrarFavoritos(id)}
-                                />)
-                            :
-                            this.state.hayFavoritos === false && (
-                                <p className="favVacio">No hay películas en Favoritos</p>)
-                    }
-                </div>
+                {cargando ? (
+                    <p className='errorDetail'>Cargando...</p>
+                ) : (
+                    <>
+                        <h1 className="tituloPopu">Peliculas Favoritas</h1>
+                        <div className="containerPopu">
+                            {
+                                this.state.peliculasFavoritas.length > 0
+                                    ?
+                                    this.state.peliculasFavoritas.map((elm, idx) =>
+                                        <CardPeliculas
+                                            data={elm}
+                                            key={idx + elm.name}
+                                            borrarDeCarrito={(id) => this.filtrarFavoritos(id)}
+                                        />)
+                                    :
+                                    this.state.hayFavoritos === false && (
+                                        <p className="favVacio">No hay películas en Favoritos</p>)
+                            }
+                        </div>
+                    </>
+                )
+                }
             </div>
         )
     }
