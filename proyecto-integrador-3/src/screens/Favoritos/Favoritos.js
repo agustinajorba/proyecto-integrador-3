@@ -52,7 +52,7 @@ export default class Favoritos extends Component {
     render() {
         const cargando = this.state.cargar;
         return (
-            <div className="conatinerFavs">
+            <div>
                 {cargando ? (
                     <p className='errorDetail'>Cargando...</p>
                 ) : (
