@@ -56,7 +56,7 @@ export default class Favoritos extends Component {
                 {cargando ? (
                     <p className='errorDetail'>Cargando...</p>
                 ) : (
-                    <>
+                    <div className="containerFav">
                         <h1 className="tituloPopu">Peliculas Favoritas</h1>
                         <div className="containerPopu">
                             {
@@ -73,7 +73,7 @@ export default class Favoritos extends Component {
                                         <p className="favVacio">No hay películas en Favoritos</p>)
                             }
                         </div>
-                    </>
+                    </div>
                 )
                 }
             </div>
