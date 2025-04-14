@@ -8,7 +8,13 @@
     border: 1px solid #000000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
+}
 
+.containerCard img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
 }
 
 .tituloCard {
@@ -69,4 +75,41 @@
 
 .botonesHome a {
     text-decoration: none;
+}
+
+@media (max-width: 640px) {
+    .containerCard {
+        width: 70%;
+        padding: 8px;
+        margin: 8px auto;
+    }
+
+    .containerCard img{
+        height: 600px ;
+        width: 80%;
+        display: flex;
+        justify-self: center;
+        padding-top: 2%;
+    }
+
+    .tituloCard {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .verDesc,
+    .verDesc button {
+        font-size: 12px;
+    }
+
+    .descr {
+        font-size: 13px;
+        padding: 4px;
+    }
+
+    .botonesHome button {
+        font-size: 13px;
+        padding: 4px 8px;
+        margin-bottom: 4px;
+    }
 }

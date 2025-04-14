@@ -50,3 +50,12 @@
     justify-content: center;
     margin-top: 1%;
 }
+
+@media (max-width: 640px) {
+    .cargarMas {
+        width: 80%;
+        display: flex;
+        justify-self: center;
+    }
+
+}

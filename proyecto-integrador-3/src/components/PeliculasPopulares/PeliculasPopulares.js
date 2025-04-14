@@ -30,8 +30,6 @@ class PeliculasPopulares extends Component {
                 <div className="populares">
                     {this.state.PelisPopulares.map((pelicula) => {
                         return <CardPeliculas key={pelicula.id} data={pelicula} />
-
-
                     })}
                 </div>
                 <div className="containerBoton">
