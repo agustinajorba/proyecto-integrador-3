@@ -35,13 +35,16 @@ export default class Favoritos extends Component {
     }
     filtrarFavoritos(id) {
         const filtradas = this.state.peliculasFavoritas.filter(pelicula => pelicula.id !== id);
-        this.setState({ peliculasFavoritas: filtradas });
         let storageFavoritos = localStorage.getItem('fav')
-        if (localStorage !== null){
+        if (localStorage !== null) {
             let favParseado = JSON.parse(storageFavoritos);
             let favActualizado = favParseado.filter(favId => favId !== id);
             localStorage.setItem('fav', JSON.stringify(favActualizado))
         }
+        this.setState({
+            peliculasFavoritas: filtradas,
+            hayFavoritos: filtradas.length > 0
+        });
     }
 
     render() {
@@ -59,12 +62,8 @@ export default class Favoritos extends Component {
                                     borrarDeCarrito={(id) => this.filtrarFavoritos(id)}
                                 />)
                             :
-                            this.state.hayFavoritos === false ?
-                                <p className="favVacio">No hay películas en Favoritos</p>
-                                :
-                                <p>
-                                    Cargando...
-                                </p>
+                            this.state.hayFavoritos === false && (
+                                <p className="favVacio">No hay películas en Favoritos</p>)
                     }
                 </div>
             </div>

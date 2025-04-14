@@ -1,0 +1,25 @@
+.botonBuscar {
+    background-color: black;
+    padding-bottom: 2%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.botonBuscar button {
+    font-family: "Fira Sans", sans-serif;
+    background-color: #c1bebe;
+    border-radius: 12px;
+    border: 2px solid #c1bebe;
+    width: 80px;
+}
+
+.textoBotonBuscar {
+    font-family: "Fira Sans", sans-serif;
+    font-style: italic;
+    margin-right: 20px;
+    width: 280px;
+    border-radius: 12px;
+    border: 2px solid white;
+    text-align: center;
+}
