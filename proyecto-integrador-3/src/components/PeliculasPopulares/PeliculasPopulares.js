@@ -35,11 +35,11 @@ class PeliculasPopulares extends Component {
                     })}
                 </div>
                 <div className="containerBoton">
-                <div className="verTodas">
-                    <Link to={'/populares'}>
-                        Ver todas
-                    </Link>
-                </div >
+                    <div className="verTodas">
+                        <Link to={'/populares'}>
+                            Ver todas
+                        </Link>
+                    </div >
                 </div>
             </>
         )

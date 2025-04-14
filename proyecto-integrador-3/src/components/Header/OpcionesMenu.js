@@ -7,15 +7,15 @@ function OpcionesMenu(props) {
         <div className="barra-navegacion">
             <ul className="barra">
                 {
-                    props.opciones.map((elm, idx) => 
-                        
-                    <li key={`${idx}-${elm.name}`}>
+                    props.opciones.map((elm, idx) =>
+
+                        <li key={`${idx}-${elm.name}`}>
 
                             <Link to={elm.path}>
                                 {elm.name}
                             </Link>
                         </li>
-                    
+
 
 
                     )

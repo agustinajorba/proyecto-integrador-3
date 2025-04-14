@@ -36,13 +36,13 @@ class PeliculasCartelera extends Component {
                 </div >
                 <div className="containerBotonCart">
                     <div className="verTodasCart">
-                    <Link to={'/cartelera'}>
-                        Ver todas
-                    </Link>
+                        <Link to={'/cartelera'}>
+                            Ver todas
+                        </Link>
                     </div>
                 </div >
-            
-                
+
+
             </>
         )
     }

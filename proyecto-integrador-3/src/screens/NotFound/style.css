@@ -1,4 +1,4 @@
-.texto-notFound{
+.texto-notFound {
     text-align: center;
     color: black;
     font-weight: 50;
@@ -8,7 +8,8 @@
     height: 350px;
 
 }
-.main-notFound{
+
+.main-notFound {
     display: flex;
     justify-content: center;
-    }
+}

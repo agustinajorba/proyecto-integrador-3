@@ -73,30 +73,30 @@ export default class PeliculaDetalle extends Component {
     return (
 
       <div>
-        {cargando ? ( 
+        {cargando ? (
           <p className='errorDetail'>Cargando...</p>
         ) :
-        !movies.title ? (
-          <p className='errorDetail'>No se encontró ninguna película.</p>
-        ) : (
-          <section className='containerDetail'>
-            <div className='text-detalle'>
-              <h1 className='titulo'>{movies.title}</h1>
-              <p>Calificación: {movies.vote_average} </p>
-              <p>Fecha de Estreno: {movies.release_date}</p>
-              <p>Duración: {movies.runtime} minutos</p>
-              <p className='sinopsis'>Sinopsis: {movies.overview}</p>
-              <p>Género/s: {movies.genres.map(genero => genero.name).join(', ')}</p>
-              {
-                this.state.favorito ?
-                  <button className='botonFavoritos' onClick={() => this.sacarFavoritos(movies.id)}>Sacar de Favoritos</button>
-                  :
-                  <button className='botonFavoritos' onClick={() => this.agregarFavoritos(movies.id)}>Agregar a Favoritos</button>
-              }
-            </div>
-            <img src={`https://image.tmdb.org/t/p/w500/${movies.poster_path}`} alt={movies.title} className='foto-detail' />
-          </section>
-        )}
+          !movies.title ? (
+            <p className='errorDetail'>No se encontró ninguna película.</p>
+          ) : (
+            <section className='containerDetail'>
+              <div className='text-detalle'>
+                <h1 className='titulo'>{movies.title}</h1>
+                <p>Calificación: {movies.vote_average} </p>
+                <p>Fecha de Estreno: {movies.release_date}</p>
+                <p>Duración: {movies.runtime} minutos</p>
+                <p className='sinopsis'>Sinopsis: {movies.overview}</p>
+                <p>Género/s: {movies.genres.map(genero => genero.name).join(', ')}</p>
+                {
+                  this.state.favorito ?
+                    <button className='botonFavoritos' onClick={() => this.sacarFavoritos(movies.id)}>Sacar de Favoritos</button>
+                    :
+                    <button className='botonFavoritos' onClick={() => this.agregarFavoritos(movies.id)}>Agregar a Favoritos</button>
+                }
+              </div>
+              <img src={`https://image.tmdb.org/t/p/w500/${movies.poster_path}`} alt={movies.title} className='foto-detail' />
+            </section>
+          )}
       </div>
     );
   }

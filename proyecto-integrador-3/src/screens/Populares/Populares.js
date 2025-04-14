@@ -50,27 +50,27 @@ class Populares extends Component {
     render() {
         const cargando = this.state.cargar;
         return (
-                <div>
-        {cargando ? (
-            <p className='errorDetail'>Cargando...</p>
-        ) : (
-            <>
-                <h1 className="tituloPopu">Peliculas Populares</h1>
-                <div className="buscadorPopu">
-                    <FiltroPeliculas filtro={(busqueda) => this.filtrarPeliculas(busqueda)} />
-                </div>
-                <div className="containerPopu">
-                    {this.state.PelisPopulares.map((pelicula) => {
-                        return <CardPeliculas key={pelicula.id} data={pelicula} />;
-                    })}
-                </div>
-                <div className="cargarMas">
-                    <button onClick={() => this.cargarPeliculas()}> Cargar más</button>
-                </div>
-            </>
-        )}
-    </div>
-)
+            <div>
+                {cargando ? (
+                    <p className='errorDetail'>Cargando...</p>
+                ) : (
+                    <>
+                        <h1 className="tituloPopu">Peliculas Populares</h1>
+                        <div className="buscadorPopu">
+                            <FiltroPeliculas filtro={(busqueda) => this.filtrarPeliculas(busqueda)} />
+                        </div>
+                        <div className="containerPopu">
+                            {this.state.PelisPopulares.map((pelicula) => {
+                                return <CardPeliculas key={pelicula.id} data={pelicula} />;
+                            })}
+                        </div>
+                        <div className="cargarMas">
+                            <button onClick={() => this.cargarPeliculas()}> Cargar más</button>
+                        </div>
+                    </>
+                )}
+            </div>
+        )
     }
 }
 

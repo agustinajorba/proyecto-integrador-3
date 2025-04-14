@@ -6,30 +6,30 @@ import './style.css'
 function Header() {
     let opciones = [
         {
-            name:'HOME',
+            name: 'HOME',
             path: '/'
         },
         {
-            name:'FAVORITOS',
+            name: 'FAVORITOS',
             path: '/favoritos'
         },
         {
-            name:'POPULARES',
+            name: 'POPULARES',
             path: '/populares'
         },
         {
-            name:'CARTELERA',
+            name: 'CARTELERA',
             path: '/cartelera'
         }
     ]
     return (
         <header>
-            <h1 className="logo">🎥  MovieStar</h1> 
-            <div className = "barra-navegacion">
-            <OpcionesMenu opciones= {opciones}/>
-            
+            <h1 className="logo">🎥  MovieStar</h1>
+            <div className="barra-navegacion">
+                <OpcionesMenu opciones={opciones} />
+
             </div>
-            
+
         </header>
 
     )

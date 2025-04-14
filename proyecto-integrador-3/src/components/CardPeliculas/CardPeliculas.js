@@ -76,9 +76,9 @@ export default class CardPeliculas extends Component {
                 <h1 className='tituloCard'>{this.state.dataPelicula.title}</h1>
                 <div>
                     <div className='verDesc'>
-                    <button onClick={() => this.descripcion()}>
-                        {this.state.verDescripcion ? "Ocultar Descripción" : "Ver Descripción"}
-                    </button>
+                        <button onClick={() => this.descripcion()}>
+                            {this.state.verDescripcion ? "Ocultar Descripción" : "Ver Descripción"}
+                        </button>
                     </div>
 
                     {this.state.verDescripcion && (

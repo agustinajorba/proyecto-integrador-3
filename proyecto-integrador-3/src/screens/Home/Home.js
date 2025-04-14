@@ -9,7 +9,7 @@ function Home(props) {
     return (
 
         <div className="home">
-            <Buscador history = {props.history}/>
+            <Buscador history={props.history} />
 
             <React.Fragment >
                 <PeliculasPopulares />
