@@ -32,7 +32,17 @@ export default class Favoritos extends Component {
                         cargar: false
                     }))
                     .catch(e => console.log(e));
+            } else{
+                this.setState({
+                    cargar: false,
+                    hayFavoritos: false
+                });
             }
+        } else {
+            this.setState({
+                cargar: false,
+                hayFavoritos: false
+            })
         }
     }
     filtrarFavoritos(id) {
